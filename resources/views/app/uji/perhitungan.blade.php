@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @push('styles')
-    <style>
+    {{-- <style>
         .matriks {
             width: 400px;
             margin: 30px auto;
@@ -22,7 +22,7 @@
         th {
             height: 40px;
         }
-    </style>
+    </style> --}}
 @endpush
 
 @section('content')
@@ -37,7 +37,7 @@
 
                 <div class="matriks matriks-keputusan">
                     <h5 class="text-center">Matrik Keputusan</h5>
-                    <table>
+                    <table class="table table-bordered" id="matriks matriks_keputusan">
                         <thead class="text-center">
                             <tr>
                                 <th>X</th>
@@ -62,7 +62,7 @@
                 <div class="matriks matriks-keputusan-ternormalisasi">
                     <h5 class="text-center">Matrik Keputusan Ternormalisasi</h5>
                     <span>Mangkuadratkan Matriks</span>
-                    <table>
+                    <table class="table table-bordered" id="matriks matriks_kuadrat">
                         <thead class="text-center">
                             <tr>
                                 <th>X</th>
@@ -88,7 +88,7 @@
                         </tbody>
                     </table>
                     <span>Normalisasi</span>
-                    <table>
+                    <table class="table table-bordered" id="matriks matriks_normalisasi">
                         <thead class="text-center">
                             <tr>
                                 <th>X</th>
@@ -117,7 +117,7 @@
 
                 <div class="matriks matriks-normalisasi-terbobot">
                     <h5 class="text-center">Matrik Normalisasi Terbobot</h5>
-                    <table>
+                    <table class="table table-bordered" id="matriks matriks_normalisasi_terbobot">
                         <thead class="text-center">
                             <tr>
                                 <th>X</th>
@@ -142,7 +142,7 @@
 
                 <div class="matriks matriks-solusi-ideal">
                     <h5 class="text-center">Matrik Solusi Ideal</h5>
-                    <table>
+                    <table class="table table-bordered" id="matriks matriks_solusi_ideal">
                         <thead class="text-center">
                             <tr>
                                 <th>X</th>
@@ -166,7 +166,7 @@
 
                 <div class="matriks matriks-solusi-ideal-positif">
                     <h5 class="text-center">Matrik Solusi Ideal Positif</h5>
-                    <table>
+                    <table class="table table-bordered" id="matriks matriks_solusi_ideal_positif">
                         <thead class="text-center">
                             <tr>
                                 <th>X</th>
@@ -190,7 +190,7 @@
 
                 <div class="matriks matriks-solusi-ideal-negatif">
                     <h5 class="text-center">Matrik Solusi Ideal Negatif</h5>
-                    <table>
+                    <table class="table table-bordered" id="matriks matriks_solusi_ideal_negatif">
                         <thead class="text-center">
                             <tr>
                                 <th>X</th>
@@ -212,10 +212,9 @@
                     </table>
                 </div>
 
-
                 <div class="matriks jarak-matriks-solusi-ideal">
                     <h5 class="text-center">Jarak Matrik Solusi Ideal</h5>
-                    <table>
+                    <table class="table table-bordered" id="matriks jarak_matriks_solusi_ideal">
                         <thead class="text-center">
                             <tr>
                                 <th>X</th>
@@ -238,7 +237,7 @@
 
                 <div class="matriks nilai-preferensi">
                     <h5 class="text-center">Nilai Preferensi</h5>
-                    <table>
+                    <table class="table table-bordered" id="matriks nilai_preferensi">
                         <thead class="text-center">
                             <tr>
                                 <th>X</th>
@@ -258,8 +257,23 @@
                     </table>
                 </div>
 
-
             </div>
         </div>
     </div>
 @endsection
+
+@push('scripts')
+    <script>
+        $(document).ready(function() {
+            $('#matriks').DataTable({
+                // pageLength: 10,
+                // filter: true,
+                // deferRender: true,
+                // scrollY: 200,
+                // scrollCollapse: true,
+                // scroller: true,
+                // "searching": true,
+            });
+        });
+    </script>
+@endpush

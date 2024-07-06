@@ -17,8 +17,8 @@ class RekomendasiController extends Controller
 
     public function perhitungan()
     {
-        $hs = head_source(['SWEETALERT2', 'SELECT2', 'SELECT2BS4']);
-        $js = script_source(['SWEETALERT2', 'BLOCKUI', 'SELECT2']);
+        $hs = head_source(['SWEETALERT2', 'DATATABLESBS5', 'SELECT2', 'SELECT2BS4']);
+        $js = script_source(['SWEETALERT2', 'DATATABLES', 'DATATABLESBS5', 'BLOCKUI', 'SELECT2']);
 
         $kriterias = Kriteria::with(['subKriterias'])->get();
 
